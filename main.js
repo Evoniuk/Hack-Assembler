@@ -11,9 +11,8 @@ document.getElementById('inputCode').addEventListener('click', function() {
 
 function displayCode (code) {
   const outputOriginal = document.getElementById('outputOriginal');
-  outputOriginal.textContent = '';
-
   const outputArea = document.getElementById('output');
+  outputOriginal.textContent = '';
   outputArea.textContent = '';
 
   const processedCode = process(code);
@@ -29,8 +28,7 @@ function displayCode (code) {
 }
 
 function process(code) {
-  code = parse(code);
-  code = handleSymbols(code);
-  originalCode = code.map(line => line);
-  return [originalCode, assemble(code)];
+  const parsedCode = parse(code);
+  const unSymbolized = handleSymbols(parsedCode);
+  return [unSymbolized, assemble(unSymbolized)];
 }

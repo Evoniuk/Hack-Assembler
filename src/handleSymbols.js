@@ -25,14 +25,14 @@ function handleSymbols(code) {
     THAT: 4,
   };
 
-  code = handleLabels(code, symbolTable);
-  code = handleVariables(code, symbolTable);
+  enterLabelsIntoSymbolTable(code, symbolTable);
+  enterVarsIntoSymbolTable(code, symbolTable);
 
-  return code;
+  const noLabels = code.filter(line => line[0] !== '(');
+  return replaceVars(noLabels, symbolTable);
 }
 
-function handleLabels(code, symbolTable) {
-  // enter value of labels into symbol table
+function enterLabelsIntoSymbolTable(code, symbolTable) {
   let numberOfLabelsSeen = 0;
   for (let i = 0; i < code.length; i++) {
     if (code[i][0] === '(') {
@@ -41,25 +41,19 @@ function handleLabels(code, symbolTable) {
       numberOfLabelsSeen++;
     }
   }
-
-  // remove labels from code
-  return code.filter(line => line[0] !== '(');
 }
 
-function handleVariables(code, symbolTable) {
-  // enter variables into symbol table
+function enterVarsIntoSymbolTable(code, symbolTable) {
   let variableIndex = 16;
   for (let i = 0; i < code.length; i++)
     if (lineIsNewVariable(code[i], symbolTable))
       symbolTable[code[i].substring(1)] = variableIndex++;
+}
 
-  // enter value of variables and labels where they occur
-  for (let i = 0; i < code.length; i++) {
-    if (code[i][0] === '@' && code[i].substring(1) in symbolTable)
-      code[i] = '@' + symbolTable[code[i].substring(1)];
-  }
-
-  return code;
+function replaceVars(code, symbolTable) {
+  return code.map(line => line[0] === '@' && line.substring(1) in symbolTable ?
+    '@' + symbolTable[line.substring(1)]:
+    line)
 }
 
 function lineIsNewVariable(line, symbolTable) {
