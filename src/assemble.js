@@ -40,25 +40,25 @@ function getDestCode(dest) {
 function getCompCode(comp) {
   const aBit = comp.includes('M') ? '1' : '0';
 
-  const compare = comp.replace(/A|M/, 'X');
+  const compute = comp.replace(/A|M/, 'X');
   const cBits =
-    compare === '0'   ? '101010':
-    compare === '1'   ? '111111':
-    compare === '-1'  ? '111010':
-    compare === 'D'   ? '001100':
-    compare === 'X'   ? '110000':
-    compare === '!D'  ? '001101':
-    compare === '!X'  ? '110001':
-    compare === '-D'  ? '001111':
-    compare === '-X'  ? '110011':
-    compare === 'D+1' ? '011111':
-    compare === 'X+1' ? '110111':
-    compare === 'D-1' ? '001110':
-    compare === 'X-1' ? '110010':
-    compare === 'D+X' ? '000010':
-    compare === 'D-X' ? '010011':
-    compare === 'X-D' ? '000111':
-    compare === 'D&X' ? '000000':
+    compute === '0'   ? '101010':
+    compute === '1'   ? '111111':
+    compute === '-1'  ? '111010':
+    compute === 'D'   ? '001100':
+    compute === 'X'   ? '110000':
+    compute === '!D'  ? '001101':
+    compute === '!X'  ? '110001':
+    compute === '-D'  ? '001111':
+    compute === '-X'  ? '110011':
+    compute === 'D+1' ? '011111':
+    compute === 'X+1' ? '110111':
+    compute === 'D-1' ? '001110':
+    compute === 'X-1' ? '110010':
+    compute === 'D+X' ? '000010':
+    compute === 'D-X' ? '010011':
+    compute === 'X-D' ? '000111':
+    compute === 'D&X' ? '000000':
                         '010101';
 
   return aBit + cBits;

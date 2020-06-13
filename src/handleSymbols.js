@@ -53,11 +53,11 @@ function enterVarsIntoSymbolTable(code, symbolTable) {
 function replaceVars(code, symbolTable) {
   return code.map(line => line[0] === '@' && line.substring(1) in symbolTable ?
     '@' + symbolTable[line.substring(1)]:
-    line)
+    line);
 }
 
 function lineIsNewVariable(line, symbolTable) {
   return line[0] === '@'  &&
   line[1].match(/[^0-9]/) &&
-  !(line.substring(1) in symbolTable)
+  !(line.substring(1) in symbolTable);
 }
