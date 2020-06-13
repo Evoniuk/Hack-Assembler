@@ -58,7 +58,7 @@ The condition tests if the line is an A instruction, and if so we assemble the A
 
 An example program might be the following, which draws a rectangle on the screen:
 
-```
+```asm
    @0
    D=M
    @INFINITE_LOOP
@@ -90,7 +90,7 @@ An example program might be the following, which draws a rectangle on the screen
 
 The parser produces the following from this input:
 
-```
+```asm
 @0
 D=M
 @INFINITE_LOOP
@@ -122,7 +122,7 @@ D;JGT
 
 After this, `handleSymbols` produces this:
 
-```
+```asm
 @0
 D=M
 @23
