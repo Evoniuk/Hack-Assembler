@@ -34,13 +34,10 @@ function handleSymbols(code) {
 
 function enterLabelsIntoSymbolTable(code, symbolTable) {
   let numberOfLabelsSeen = 0;
-  for (let i = 0; i < code.length; i++) {
-    if (code[i][0] === '(') {
+  for (let i = 0; i < code.length; i++)
+    if (code[i][0] === '(')
       symbolTable[code[i].substring(1, code[i].length - 1)]
-        = i - numberOfLabelsSeen;
-      numberOfLabelsSeen++;
-    }
-  }
+        = i - numberOfLabelsSeen++;
 }
 
 function enterVarsIntoSymbolTable(code, symbolTable) {
