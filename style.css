@@ -7,6 +7,8 @@ body {
   padding: 0 5px;
 }
 
+hr {border: .5px solid black}
+
 code, pre, textarea {
   color: rgb(14, 67, 117);
   background-color: rgb(244, 247, 250);
@@ -36,7 +38,10 @@ textarea {
   float: right;
   width: 80%;
 }
+
 #outputOriginal {
   float: left;
   width: 20%;
 }
+
+a {color: rgb(14, 67, 117)}
