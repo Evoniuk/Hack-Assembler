@@ -1,7 +1,7 @@
 * {box-sizing: border-box}
 
 body {
-  max-width: 36rem;
+  max-width: 32rem;
   margin: auto;
   font-family: sans-serif;
   padding: 0 5px;
@@ -27,6 +27,26 @@ textarea {
   border: none;
   border-left: 1px solid rgb(14, 67, 117);
   padding-left: 5px;
+}
+
+h4 {text-align: center}
+
+button, input {
+  font-size: 1rem;
+  outline: none;
+  background-color: rgb(244, 247, 250);
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  display: block;
+  margin: 5px auto;
+  color: rgb(14, 67, 117);
+}
+
+button:hover {
+  font-style: italic;
+  background-color: rgb(244, 247, 250);
+  cursor: pointer;
 }
 
 #output, #outputOriginal {
