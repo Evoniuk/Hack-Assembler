@@ -5,6 +5,7 @@ body {
   margin: auto;
   font-family: sans-serif;
   padding: 0 5px;
+  line-height: 1.3rem;
 }
 
 hr {border: .5px solid black}
