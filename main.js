@@ -9,7 +9,7 @@ document.getElementById('fileInput').addEventListener('change', function() {
 
 document.getElementById('inputCode').addEventListener('click', function() {
   const codeInput = document.getElementById('codeInput').value;
-  displayCode(codeInput);
+  displayCode(codeInput, 'program');
 })
 
 function displayCode (code, fileName) {
