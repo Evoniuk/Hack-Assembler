@@ -14,9 +14,9 @@ function assembleAinstruction(line) {
 
 function assembleCinstruction(line) {
   const [dest, comp, jump] = parseCinstruction(line);
-  destCode = getDestCode(dest);
-  compCode = getCompCode(comp);
-  jumpCode = getJumpCode(jump);
+  const destCode = getDestCode(dest);
+  const compCode = getCompCode(comp);
+  const jumpCode = getJumpCode(jump);
 
   return '111' + compCode + destCode + jumpCode;
 }
