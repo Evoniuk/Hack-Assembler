@@ -1,5 +1,6 @@
 function parse(code) {
-  return code.split(/\r?\n/)
+  return code
+    .split(/\r?\n/)
     .map(stripWhitespace)
     .filter(line => line !== '');
 }
