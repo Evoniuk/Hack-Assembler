@@ -1,4 +1,4 @@
-function parse(code) {
+export default function parse(code) {
   return code
     .split(/\r?\n/)
     .map(stripWhitespace)

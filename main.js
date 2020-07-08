@@ -1,3 +1,7 @@
+import parse from "./src/parser.js";
+import handleSymbols from "./src/handleSymbols.js";
+import assemble from "./src/assemble.js";
+
 document.getElementById('fileInput').addEventListener('change', function() {
   const file = this.files[0];
   const fileName = file.name.substring(0, file.name.indexOf('.'));

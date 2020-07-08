@@ -1,4 +1,4 @@
-function handleSymbols(code) {
+export default function handleSymbols(code) {
   const symbolTable = {
     R0:  0,
     R1:  1,

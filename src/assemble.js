@@ -1,4 +1,4 @@
-function assemble(code) {
+export default function assemble(code) {
   return code.map(line => line[0] === '@' ?
     assembleAinstruction(line):
     assembleCinstruction(line));
