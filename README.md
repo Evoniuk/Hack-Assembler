@@ -1,6 +1,6 @@
 # Hack Assembler
 
-This is an assembler from the Hack assembly language into the Hack machine language. [Try for yourself here](https://evoniuk.github.io/Hack-Assembler/).
+This is project 7 in the Nand to Tetris course, an assembler from the Hack assembly language into the Hack machine language. [Try for yourself here](https://evoniuk.github.io/Hack-Assembler/).
 
 ## How It Works
 
